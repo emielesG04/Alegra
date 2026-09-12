@@ -1,0 +1,10 @@
+Como usuario de la plataforma de mensajería
+Quiero enviar mensajes de texto a otros usuarios
+Para comunicarme en tiempo real
+
+Criterios de Aceptación:
+- El mensaje debe tener máximo 4096 caracteres
+- El usuario debe estar autenticado
+- El mensaje debe encriptarse en tránsito
+- Se debe mostrar confirmación de entrega
+- Si el envío falla, reintentar hasta 3 veces

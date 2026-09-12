@@ -1,0 +1,73 @@
+{
+  "type": "object",
+  "title": "Requirements Analysis Schema",
+  "description": "Schema for validating AI-generated requirements analysis output",
+  "required": [
+    "businessRules",
+    "actors",
+    "preconditions",
+    "postconditions",
+    "gaps",
+    "ambiguities",
+    "risks"
+  ],
+  "properties": {
+    "businessRules": {
+      "type": "array",
+      "description": "List of explicit and implicit business rules",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "actors": {
+      "type": "array",
+      "description": "List of actors/users involved in the user story",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "preconditions": {
+      "type": "array",
+      "description": "Conditions that must exist before the user story execution",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "postconditions": {
+      "type": "array",
+      "description": "Conditions that must exist after the user story execution",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "description": "Missing information that should be defined in requirements",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "ambiguities": {
+      "type": "array",
+      "description": "Behaviors not specified clearly in requirements",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "risks": {
+      "type": "array",
+      "description": "Technical or business risks identified",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false
+}

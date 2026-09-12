@@ -1,0 +1,102 @@
+{
+  "type": "object",
+  "title": "Test Case Schema",
+  "description": "Schema for validating individual test case structure",
+  "required": [
+    "id",
+    "title",
+    "requirement",
+    "type",
+    "technique",
+    "priority",
+    "risk",
+    "preconditions",
+    "testData",
+    "steps",
+    "expectedResult",
+    "evidenceRequired",
+    "automatable"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^TC-[A-Z]+-[0-9]+$",
+      "description": "Unique test case identifier (e.g., TC-MSG-001)"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 5,
+      "description": "Descriptive title of the test case"
+    },
+    "requirement": {
+      "type": "string",
+      "pattern": "^REQ-[A-Z]+-[0-9]+$",
+      "description": "Related requirement identifier (e.g., REQ-MSG-001)"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["Funcional", "No Funcional"],
+      "description": "Test case type"
+    },
+    "technique": {
+      "type": "string",
+      "enum": [
+        "Happy Path",
+        "Negative Testing",
+        "Boundary Value Analysis",
+        "Equivalence Partitioning",
+        "Decision Table",
+        "State Transition Testing",
+        "Error Guessing"
+      ],
+      "description": "ISTQB technique applied"
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["Alta", "Media", "Baja"],
+      "description": "Test case priority"
+    },
+    "risk": {
+      "type": "string",
+      "enum": ["Alto", "Medio", "Bajo"],
+      "description": "Risk level associated with this test"
+    },
+    "preconditions": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Conditions required before test execution"
+    },
+    "testData": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Specific data to be used in test execution"
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "Step-by-step test execution instructions"
+    },
+    "expectedResult": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Verifiable expected result (must be specific and observable)"
+    },
+    "evidenceRequired": {
+      "type": "boolean",
+      "description": "Whether evidence/screenshot is required"
+    },
+    "automatable": {
+      "type": "boolean",
+      "description": "Whether test case can be automated"
+    },
+    "gap": {
+      "type": "boolean",
+      "description": "Whether test case exposes a requirements gap"
+    }
+  },
+  "additionalProperties": false
+}
